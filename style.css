@@ -1,0 +1,1052 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+  background-color: #b4fdff;
+}
+/* navbar */
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #19e4e4;
+  padding: 30px 0;
+  position: fixed;
+  width: 100%;
+  /* color: #fa5e25; */
+  z-index: 999;
+  top: 0;
+}
+.logo {
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 45%;
+  line-height: 30px;
+  justify-content: space-between;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #f8fcfc;
+  padding: 5px;
+  position: relative;
+}
+nav ul li a::after {
+  transition: 0.3s;
+  content: '';
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: bottom center;
+  background: #fdffff;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+}
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+/* hamburger menu */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  z-index: 11;
+}
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -5px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* hamburger menu animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+/* akhir navbar */
+
+/* baner */
+
+.baner {
+  display: flex;
+  /* background-color: #93f3f7; */
+  width: 100%;
+  height: 480px;
+  justify-content: space-between;
+  background: #1ae1e2;
+  background: linear-gradient(180deg, rgba(26, 225, 226, 1) 0%, rgba(147, 243, 247, 1) 91%, rgba(191, 251, 254, 1) 100%);
+}
+.baner img {
+  width: 100%;
+}
+.left {
+  top: 180px;
+  left: 10%;
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  align-items: center;
+  height: 70px;
+  width: 35%;
+}
+.left p {
+  font-size: 15px;
+}
+
+button {
+  position: absolute;
+  height: 50px;
+  width: 150px;
+  background-color: #17bdbd;
+  border: 2px solid white;
+  color: white;
+  top: 420px;
+  left: 15%;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 20px;
+}
+.slider {
+  display: grid;
+  /* position: fixed; */
+  position: absolute;
+  top: 20vh;
+  left: 620px;
+  width: 50vw;
+  height: 60vh;
+  overflow: hidden;
+  z-index: 1;
+  background: #000;
+}
+.slider .slide-container {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  animation: slider 20s infinite;
+}
+.slider .slide-container .slide {
+  background: rgb(26, 225, 226);
+  background: linear-gradient(180deg, rgb(23, 231, 231) 0%, rgba(147, 243, 247, 1) 90%, rgba(191, 251, 254, 1) 100%);
+  position: relative;
+  width: 25%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+.slider .slide-container .slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* filter: brightness(130%); */
+}
+@keyframes slider {
+  0%,
+  25% {
+    left: 0;
+  }
+
+  30%,
+  55% {
+    left: -100%;
+  }
+
+  60%,
+  85% {
+    left: -200%;
+  }
+
+  90%,
+  100% {
+    left: -300%;
+  }
+}
+/* akhir baner */
+
+/* produk */
+.produk {
+  display: flex;
+  margin-top: 100px;
+}
+.produk h3 {
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+.produk-img {
+  /* color: rgb(117, 250, 255); */
+  display: flex;
+  justify-content: space-evenly;
+}
+.produk-img .col-4 {
+  width: 25%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.logo img {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  line-height: 120px;
+  font-size: 30px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  border-radius: 10%;
+  background-color: rgb(147, 243, 247);
+}
+.col-4 h4 {
+  margin-top: 20px;
+}
+
+/* akhir produk */
+
+/* fungsi */
+.fungsi {
+  display: flex;
+  margin-top: 100px;
+}
+.fungsi h3 {
+  display: flex;
+  margin: 50px auto;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+.f {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 70px;
+}
+.fungsi-img {
+  display: flex;
+}
+.fungsi-img img {
+  width: 400px;
+  height: 400px;
+  margin: auto 40px;
+  border-radius: 15%;
+}
+.deskripsi {
+  width: 500px;
+  height: 400px;
+  margin: auto 40px;
+  font-family: 'Raleway', sans-serif;
+}
+.deskripsi h4 {
+  font-size: 40px;
+  margin: 30px auto;
+  color: #17bdbd;
+}
+.deskripsi p {
+  font-size: 20px;
+  margin: 30px auto;
+  color: #1cd1d1;
+  font-weight: 700;
+  line-height: 33px;
+}
+.deskripsi a {
+  color: #17bdbd;
+  font-size: 25px;
+  font-weight: 700;
+}
+/* akhir fungsi */
+
+.kotak {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  background-color: #63cbcb;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+.kotak img {
+  width: 90px;
+  height: 50px;
+}
+
+/* sosmed */
+.wrapper {
+  background-color: #63cbcb;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 400px;
+}
+.sosmed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  /* margin-top: 150px; */
+}
+.sosmed h3 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+.connect {
+  display: flex;
+  width: 350px;
+  flex-direction: row;
+  justify-content: center;
+  /* gap: 5px; */
+}
+
+.connect a img.icon {
+  display: flex;
+  width: 100%;
+}
+.container-content {
+  display: grid;
+  gap: 50px;
+  font-family: 'Raleway', sans-serif;
+  color: #199f9f;
+}
+
+.container-content .subscribe h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.subscribe {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #199f9f;
+}
+.subscribe form {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 55px;
+  justify-content: center;
+  margin-left: 60px;
+}
+.subscribe input[type='submit'] {
+  height: 33px;
+  margin: 6px 0 0 15px;
+  line-height: 6px;
+}
+
+/* form */
+
+input[type='text'],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type='submit'] {
+  background-color: #199f9f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 30%;
+}
+
+input[type='submit']:hover {
+  background-color: #168d8d;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 50px;
+  line-height: 25px;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #199f9f;
+}
+
+.container h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+/* akhir sosmed */
+
+/* footer */
+.footer {
+  text-align: center;
+  justify-content: space-between;
+  color: white;
+  background-color: #63cbcb;
+  font-size: 18px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+/* akhir footer */
+
+/* kategori produk */
+.container-produk {
+  display: grid;
+  margin-top: 70px;
+  margin-left: 70px;
+  width: 50%;
+  /* margin-bottom: 500px; */
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+.kategori ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-top: 20px;
+}
+.kategori ul li a {
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: white;
+  color: #168d8d;
+  font-size: 15px;
+  font-weight: 800;
+}
+/* akhir kategori produk */
+
+/* sidenav */
+.container-sidenav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+.container-sidenav .sidenav {
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 40px;
+  height: 250px;
+}
+.sidenav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style: none;
+  gap: 20px;
+  width: 100%;
+  margin-left: 70px;
+}
+.sidenav ul li a {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  color: #168d8d;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.container-sidenav .produk {
+  width: 83%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  margin-top: 30px;
+  background-color: white;
+  width: 30%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card img {
+  border-radius: 5px;
+  width: 100%;
+  height: 300px;
+}
+.container-card {
+  padding: 2px 16px;
+  line-height: 23px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+.container-card h4 {
+  font-size: 18px;
+  font-weight: 900;
+  font-family: 'Raleway', sans-serif;
+}
+.container-card h5 {
+  font-size: 17px;
+  font-family: 'Noto Serif NP Hmong', serif;
+}
+.button {
+  display: flex;
+  gap: 5px;
+}
+.buy {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 70%;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+.buy a {
+  text-decoration: none;
+  color: #168d8d;
+}
+.add {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 30%;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+.add img {
+  width: 40px;
+  height: 30px;
+}
+/* akhir sidenav */
+
+/* cart */
+.container-cart {
+  display: grid;
+  margin-top: 90px;
+}
+.tittle {
+  margin: 20px auto;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+.kategori-cart ul {
+  display: flex;
+  justify-content: space-around;
+  /* left: 70px; */
+  background-color: white;
+  padding: 20px;
+  list-style: none;
+}
+.kategori-cart ul li a {
+  text-decoration: none;
+  color: #168d8d;
+  padding: 5px;
+  position: relative;
+}
+.kategori-cart ul li a::after {
+  transition: 0.3s;
+  content: '';
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  background: #168d8d;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+}
+.kategori-cart ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.cart-wrapper {
+  background-color: whitesmoke;
+}
+.cart {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  height: 320px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+  border-radius: 15px;
+}
+
+.checklist {
+  width: 10%;
+  display: flex;
+}
+.checklist input {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 45%;
+  left: 30px;
+  z-index: 30;
+}
+
+.cart-image {
+  width: 30%;
+
+  justify-content: center;
+}
+.cart-image img {
+  width: 250px;
+  height: 250px;
+  margin: 35px;
+  border-radius: 15%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.deskripsi {
+  width: 80%;
+  height: 257px;
+
+  margin: 0;
+  line-height: 25px;
+  padding: 30px;
+  justify-content: space-between;
+}
+.deskripsi h5 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.deskripsi .harga {
+  margin-top: 60px;
+  font-family: 'Noto Serif NP Hmong', serif;
+}
+.jumlah {
+  display: flex;
+}
+.jumlah h2 {
+  padding: 1px 20px;
+  border: 1px solid black;
+  color: black;
+}
+.jumlah a {
+  text-decoration: none;
+}
+
+.button-cart {
+  width: 10%;
+
+  background-color: #168d8d;
+  border-radius: 5px;
+}
+.button-cart h4 {
+  transform: rotate(270deg);
+  margin-top: 150px;
+  color: #b4fdff;
+}
+.button-cart a {
+  text-decoration: none;
+}
+
+/* akhir cart */
+
+/* checkout */
+.judul h2 {
+  margin-top: 200px;
+  margin-left: 550px;
+  font-family: 'Raleway', sans-serif;
+}
+/* akhir checkout */
+
+/* login */
+.container-login {
+  width: 40%;
+  height: 500px;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  left: 400px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.container-login .image img {
+  width: 200px;
+  height: 200px;
+  margin-left: 30%;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+.name {
+  margin-top: 20px;
+}
+.name h2 {
+  margin: 5px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+.name input {
+  width: 70%;
+  height: 32px;
+  margin-left: 15%;
+}
+
+.pwd h2 {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin: 5px;
+}
+.pwd input {
+  width: 70%;
+  height: 25px;
+  margin-left: 15%;
+}
+
+.button-login {
+  background-color: #168d8d;
+  left: 160px;
+  top: 420px;
+  width: 200px;
+  height: 45px;
+}
+
+.login-checklist {
+  margin-top: 50px;
+  /* margin-left: 85px; */
+  display: flex;
+}
+.login-checklist input {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+.login-checklist p {
+  margin-top: 10px;
+}
+/* akhir login */
+
+/* responsive */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(117, 250, 255);
+    z-index: 1;
+    transform: translate(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* checkout */
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #1ae1e2;
+    z-index: 995;
+    transform: translate(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+  nav ul.slide {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .menu-toggle input {
+    z-index: 999;
+    width: 30px;
+    height: 30px;
+  }
+  .menu-toggle span {
+    z-index: 998;
+  }
+
+  .baner {
+    display: flex;
+    /* background-color: #93f3f7; */
+    width: 100%;
+    height: 480px;
+    justify-content: space-between;
+    background: #1ae1e2;
+    background: linear-gradient(180deg, rgba(26, 225, 226, 1) 0%, rgba(147, 243, 247, 1) 91%, rgba(191, 251, 254, 1) 100%);
+  }
+  .baner img {
+    width: 100%;
+    height: 400px;
+  }
+
+  .left {
+    top: 180px;
+    left: 2px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+    height: 70px;
+    width: 100%;
+    line-height: 25px;
+  }
+  .left h4 {
+    font-size: 35px;
+    line-height: 35px;
+  }
+  .left p {
+    font-size: 15px;
+  }
+
+  button {
+    position: absolute;
+    height: 40px;
+    width: 150px;
+    background-color: #17bdbd;
+    border: 2px solid white;
+    color: white;
+    top: 450px;
+    left: 70px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 20px;
+  }
+  .slider {
+    display: none;
+  }
+  .produk-img .col-4 {
+    width: 100%;
+  }
+  .produk-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .f {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+  .f .deskripsi h4 {
+    font-size: 30px;
+  }
+
+  .kotak img {
+    width: 70px;
+    height: 50px;
+  }
+
+  /* sosmed */
+  .wrapper {
+    background-color: #63cbcb;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 400px;
+  }
+  .sosmed {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 40px;
+    align-items: center;
+    margin-top: -150px;
+  }
+  .sosmed h3 {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  .connect {
+    display: flex;
+    width: 350px;
+    flex-direction: row;
+    justify-content: center;
+    /* gap: 5px; */
+  }
+
+  .connect a img.icon {
+    display: flex;
+    width: 100%;
+  }
+  .container-content {
+    display: grid;
+    gap: 50px;
+    font-family: 'Raleway', sans-serif;
+    color: #199f9f;
+  }
+
+  .container-content .subscribe h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  .subscribe {
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #199f9f;
+  }
+  .subscribe form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 55px;
+    justify-content: center;
+    margin-left: 60px;
+  }
+  .subscribe input[type='submit'] {
+    height: 33px;
+    margin: 6px 0 0 15px;
+    line-height: 6px;
+  }
+
+  /* form */
+
+  input[type='text'],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type='submit'] {
+    background-color: #199f9f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 30%;
+  }
+
+  input[type='submit']:hover {
+    background-color: #168d8d;
+  }
+
+  .container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 50px;
+    line-height: 25px;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #199f9f;
+  }
+
+  .container h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  /* produk */
+}
